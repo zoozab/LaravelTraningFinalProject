@@ -20,13 +20,19 @@
                                              $image = $multi_image->where('product_id', $p_id);
                                              
                                          @endphp --}}
+                                         @php
+                                            $i = 0;
+                                         @endphp
                                          @foreach ($multi_image->where('product_id', $item->id) as $key => $ss)
-                                             <div class="carousel-item">
+                                             <div class="carousel-item{{ $i == 0 ? ' active' : '' }}">
                                                  <img style="height: 225px; width: 100%; display: block;"
                                                      src="{{ $ss->multi_image }}"
-                                                     class="d-block w-100{{ $key == 0 ? 'active' : '' }} "
+                                                     class="d-block w-100{{ $i == 0 ? 'active' : '' }} "
                                                      data-holder-rendered="true">
                                              </div>
+                                             @php
+                                                $i++;
+                                            @endphp
                                          @endforeach
                                      </div>
 
