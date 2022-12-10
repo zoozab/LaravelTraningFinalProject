@@ -17,7 +17,7 @@ class WalletFactory extends Factory
     public function definition()
     {
         return [
-            'amount' => int::random(9)
+            'amount' => random_int(0, 100)
         ];
     }
 }

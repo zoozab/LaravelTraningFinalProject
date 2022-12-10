@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class CommentFactory extends Factory
+class CommentsFactory extends Factory
 {
     /**
      * Define the model's default state.

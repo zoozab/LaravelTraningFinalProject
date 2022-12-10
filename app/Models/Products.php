@@ -25,6 +25,6 @@ class Products extends Model
     }
     public function multi_images()
     {
-        return $this->hasMany(MultiImage::class);
+        return $this->hasMany(MultiImage::class, 'product_id');
     }
 }

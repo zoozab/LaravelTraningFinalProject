@@ -18,7 +18,7 @@ class ProductsForSaleFactory extends Factory
     {
         return [
             'product_name' => fake()->name(),
-            'product_price' => int::random(10),
+            'product_price' => random_int(1, 10),
             'product_description' => $this->faker->realText($maxNbChars = 50)
         ];
     }
