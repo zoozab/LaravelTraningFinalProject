@@ -20,10 +20,10 @@ class ProductsForSale extends Model
 
     public function comments()
     {
-        return $this->hasMany(comments::class);
+        return $this->hasMany(comments::class, 'product_id');
     }
     public function site_multi_images()
     {
-        return $this->hasMany(SiteMultiImage::class);
+        return $this->hasMany(SiteMultiImage::class, 'product_id');
     }
 }

@@ -22,10 +22,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //     User::factory(10)->has(
-        //         Products::factory(3)->has(MultiImage::factory()->count(3)),
-        //         Wallet::factory(2)
-        //     )->create();
-        //     Catagory::factory(6)->has(ProductsForSale::factory(5)->has(SiteMultiImage::factory()->count(3), Comments::factory()->count(3)), Products::factory(3))->create();
+            User::factory(10)
+                ->has(Products::factory(3)->has(MultiImage::factory()->count(3), 'multi_images'))
+                ->has(Wallet::factory(2))
+                ->create();
+            Catagory::factory(6)
+                ->has(
+                    ProductsForSale::factory(5)
+                        ->has(SiteMultiImage::factory()->count(3), 'site_multi_images')
+                        ->has(Comments::factory()->count(3))
+                        // ->has(Products::factory(3))
+                )->create();
     }
 }
